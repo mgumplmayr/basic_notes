@@ -25,7 +25,7 @@
     <h1>Notes from: <?php echo $user?></h1>
     <?php
     if($result) {
-        echo json_encode($response);
+        echo json_encode($response, JSON_UNESCAPED_UNICODE);
     } 
     else {
         echo "Database connection failed!";

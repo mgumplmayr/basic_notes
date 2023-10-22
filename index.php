@@ -36,7 +36,7 @@
                     $response [$x]["user"] = $row["user"];
                     $x++;
                 }
-                echo json_encode($response);
+                echo json_encode($response, JSON_UNESCAPED_UNICODE);
             }
         } else {
             echo "Database connection failed!";
