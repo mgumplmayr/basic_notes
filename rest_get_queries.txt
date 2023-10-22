@@ -1,0 +1,2 @@
+http://localhost:3000/show_note_api.php?username=Max
+http://localhost:3000/show_note_api.php?username=Tim

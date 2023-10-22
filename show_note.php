@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html>
 <body>
-    
     <?php
-        if(isset($_POST["show_note"])){
-            $user = $_POST["user_show"];
+            $user = $_GET["user_show"];
             $con = mysqli_connect("localhost", "root", "", "api");
             if($con) {
                 $sql = "select * from notes where user = '$user'";
@@ -20,7 +18,6 @@
                     }
                 }
             }
-        }
     ?>
     <h1>Notes from: <?php echo $user?></h1>
     <?php

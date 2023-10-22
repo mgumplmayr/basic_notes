@@ -14,7 +14,7 @@
     </form>
 
     <h1>Show note from user:</h1>
-    <form name = "show_note" action = "show_note.php" method = "post">
+    <form name = "show_note" action = "show_note.php" method = "get">
         <p>Username: <input type = "text" name = "user_show" placeholder = "Username"></p>
 
         <p><input type = "submit" name = "show_note" value = "Show notes"></p>
