@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="NoteService"
+             targetNamespace="http://example.com/noteservice"
+             xmlns:tns="http://example.com/noteservice"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+             xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+             xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema targetNamespace="http://example.com/noteservice">
+      <xsd:element name="add_note">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="id" type="xsd:int"/>
+            <xsd:element name="title" type="xsd:string"/>
+            <xsd:element name="description" type="xsd:string"/>
+            <xsd:element name="user" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="add_noteResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </types>
+
+  <message name="add_noteRequest">
+    <part name="parameters" element="tns:add_note"/>
+  </message>
+  <message name="add_noteResponse">
+    <part name="parameters" element="tns:add_noteResponse"/>
+  </message>
+
+  <portType name="NoteServicePortType">
+    <operation name="add_note">
+      <input message="tns:add_noteRequest"/>
+      <output message="tns:add_noteResponse"/>
+    </operation>
+  </portType>
+<binding name="NoteServiceBinding" type="tns:NoteServicePortType">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="add_note">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="encoded" namespace="" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+  </binding>
+
+  <service name="NoteService">
+    <port name="NoteServicePort" binding="tns:NoteServiceBinding">
+      <soap:address location=""/>
+    </port>
+  </service>
+
+</definitions>

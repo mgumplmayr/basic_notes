@@ -1,2 +1,5 @@
 http://localhost:3000/show_note_api.php?username=Max
 http://localhost:3000/show_note_api.php?username=Tim
+
+Query WSDL Info:
+http://localhost:3000/ai_noteservice.php?wsdl
