@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Home (REST)</title>
+    <title>Home (SOAP)</title>
 </head>
 <body>
     <nav>
@@ -9,14 +9,14 @@
         <a href = "/soap/index.php">Home (SOAP)</a>
         <a href = "/soap/soapserver.php?wsdl">WSDL</a>
     </nav>
-    <h1>Home (REST)</h1>
+    <h1>Home (SOAP)</h1>
     <h1>Add a note:</h1>
-    <form name = "add_notes" action = "add_note.php" method = "post">
+    <form name = "add_notes_soap" action = "/soap/add_note_soap.php" method = "post">
         <p>Username: <input type = "text" name = "user_add" placeholder = "Username"></p>
         <p>Title: <input type = "text" name = "title" placeholder = "Title"></p>
         <p>Content: <input type = "text" name = "content" placeholder = "Content"></p>
 
-        <p><input type = "submit" name = "add_note" value = "Add note"></p>
+        <p><input type = "submit" name = "add_note_soap" value = "Add note"></p>
     </form>
 
     <h1>Show note from user:</h1>
@@ -48,4 +48,7 @@
             echo "Database connection failed!";
         }
     ?>
+
 </body>
+
+
