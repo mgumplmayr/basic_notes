@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-
+    
 <body>
     <?php
     $soap = new SoapClient("notes.wsdl",  array( 
