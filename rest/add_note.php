@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="/global.css">
+</head>
 <body>
     <?php
         if(isset($_POST["add_note"])){

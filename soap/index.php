@@ -2,11 +2,13 @@
 <html>
 <head>
     <title>Home (SOAP)</title>
+    <link rel="stylesheet" href="/global.css">
 </head>
 <body>
-    <nav>
-        <a href = "/index.php">Home (REST)</a>
-        <a href = "/soap/index.php">Home (SOAP)</a>
+<nav>
+        <a href = "/basic/index.php">Home </a>
+        <a href = "/rest/index.php">Home (REST)</a>
+        <a href = "/soap/calculate.php">Calculator (SOAP)</a>
         <a href = "/soap/soapserver.php?wsdl">WSDL</a>
     </nav>
     <h1>Home (SOAP)</h1>
@@ -19,11 +21,11 @@
         <p><input type = "submit" name = "add_note_soap" value = "Add note"></p>
     </form>
 
-    <h1>Show note from user:</h1>
-    <form name = "show_note" action = "show_note.php" method = "get">
+    <h1>Show note from usder:</h1>
+    <form name = "show_note_soap" action = "get_note_soap.php" method = "get">
         <p>Username: <input type = "text" name = "user_show" placeholder = "Username"></p>
 
-        <p><input type = "submit" name = "show_note" value = "Show notes"></p>
+        <p><input type = "submit" name = "show_note_soap" value = "Show notes"></p>
     </form>
 
     <h1>Database content:</h1>
