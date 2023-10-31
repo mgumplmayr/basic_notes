@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Home (SOAP)</title>
+    <title>Home (REST)</title>
     <link rel="stylesheet" href="/global.css">
 </head>
 <body>
@@ -11,21 +11,21 @@
         <a href = "/soap/calculate.php">Calculator (SOAP)</a>
         <a href = "/soap/soapserver.php?wsdl">WSDL</a>
     </nav>
-    <h1>Home (SOAP)</h1>
+    <h1>Home (REST)</h1>
     <h1>Add a note:</h1>
-    <form name = "add_notes_soap" action = "/soap/add_note_soap.php" method = "post">
+    <form name = "add_notes" action = "add_note.php" method = "post">
         <p>Username: <input type = "text" name = "user_add" placeholder = "Username"></p>
         <p>Title: <input type = "text" name = "title" placeholder = "Title"></p>
         <p>Content: <input type = "text" name = "content" placeholder = "Content"></p>
 
-        <p><input type = "submit" name = "add_note_soap" value = "Add note"></p>
+        <p><input type = "submit" name = "add_note" value = "Add note"></p>
     </form>
 
-    <h1>Show note from usder:</h1>
-    <form name = "show_note_soap" action = "get_note_soap.php" method = "get">
+    <h1>Show note from user:</h1>
+    <form name = "show_note" action = "show_note.php" method = "get">
         <p>Username: <input type = "text" name = "user_show" placeholder = "Username"></p>
 
-        <p><input type = "submit" name = "show_note_soap" value = "Show notes"></p>
+        <p><input type = "submit" name = "show_note" value = "Show notes"></p>
     </form>
 
     <h1>Database content:</h1>
@@ -50,7 +50,4 @@
             echo "Database connection failed!";
         }
     ?>
-
 </body>
-
-
