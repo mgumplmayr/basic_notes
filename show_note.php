@@ -5,7 +5,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #74b886;
+            background-color: #FFFF99;
         }
 
         nav {
@@ -53,8 +53,25 @@
         input[type="submit"]:hover {
             background-color: #555;
         }
+
+        .button{
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .button:hover{
+            background-color: #555;
+        }
     </style>
 <body>
+    <nav>
+        <a href="/index.php">Home</a>
+        <a href="/index.php">All Notes</a>
+    </nav>
     <?php
             $user = $_GET["user_show"];
             $con = mysqli_connect("localhost", "root", "", "api");
@@ -76,11 +93,19 @@
     <h1>Notes from: <?php echo $user?></h1>
     <?php
     if($result) {
-        echo json_encode($response, JSON_UNESCAPED_UNICODE);
+        foreach($response as $data) {
+            echo "<h2>".$data["title"]."</h2>";
+            echo "<p>Content: ".$data["content"]."</p>";
+            echo "<p>By: ".$data["user"]."</p>";
+            echo "<p> ID: ".$data["id"]."</p>";
+            echo "<hr>";
+        }
     } 
     else {
         echo "Database connection failed!";
     }
     ?>
+    <button class="button" onclick="history.go(-1);">Back </button>
+
 </body>
 </html>
