@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SimpleNotes: Home</title>
+    <title>Home (REST)</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #FFFF99;
+            background-color: #74b886;
         }
 
         nav {
@@ -61,12 +61,12 @@
 </head>
 <body>
     <nav>
-        <a href="/index.php">Home</a>
-        <a href="/index.php">All Notes</a>
-
+        <a href="/index.php">Home (REST)</a>
+        <a href="/soap/index.php">Home (SOAP)</a>
+        <a href="/soap/soapserver.php?wsdl">WSDL</a>
     </nav>
 
-    <h1>SimpleNotes: Home</h1>
+    <h1>Home (REST)</h1>
 
     <h1>Add a note:</h1>
     <form name="add_notes" action="add_note.php" method="post">
@@ -98,22 +98,10 @@
                     $response [$x]["user"] = $row["user"];
                     $x++;
                 }
-                if($result) {
-                    foreach($response as $data) {
-                        echo "<h2>".$data["title"]."</h2>";
-                        echo "<p>Content: ".$data["content"]."</p>";
-                        echo "<p>By: ".$data["user"]."</p>";
-                        echo "<p> ID: ".$data["id"]."</p>";
-                        echo "<hr>";
-                    }
-                } 
+                echo json_encode($response, JSON_UNESCAPED_UNICODE);
             }
         } else {
             echo "Database connection failed!";
         }
-    ?>
-    <h2>Content as JSON:</h2>
-    <?php
-        echo json_encode($response, JSON_UNESCAPED_UNICODE);
     ?>
 </body>
