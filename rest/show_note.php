@@ -32,7 +32,13 @@
     <h1>Notes from: <?php echo $user?></h1>
     <?php
     if($result) {
-        echo json_encode($response, JSON_UNESCAPED_UNICODE);
+        foreach ($response as $data) {
+            echo "<h2>" . $data["title"] . "</h2>";
+            echo "<p>Content: " . $data["content"] . "</p>";
+            echo "<p>By: " . $data["user"] . "</p>";
+            echo "<p> ID: " . $data["id"] . "</p>";
+            echo "<hr>";
+        }
     } 
     else {
         echo "Database connection failed!";

@@ -20,7 +20,4 @@
 
         <p><input type = "submit" name = "note" value = "Add note"></p>
     </form>
-    <h2>Show Content in Database</h2>
-    <form name = "notes" action = "all_notes.php" method = "post">
-        <p><input type = "submit" name = "all_notes" value = "Show all notes"></p>
 </body>
