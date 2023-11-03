@@ -14,7 +14,11 @@
                 $response [$x]["user"] = $row["user"];
                 $x++;
             }
-            echo json_encode($response, JSON_UNESCAPED_UNICODE);
+            if(isset($response)) {
+                echo json_encode($response, JSON_UNESCAPED_UNICODE);}
+            else {
+                echo "No data found!";
+            }
         }
         else {
             echo "Database connection failed!";
