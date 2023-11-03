@@ -1,7 +1,8 @@
 <?php
+    if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $user = $_GET["username"];
     $con = mysqli_connect("localhost", "root", "", "api");
-    if($con) {
+    if($con) { //Response ausgeben
         $sql = "select * from notes where user = '$user'";
         $result = mysqli_query($con, $sql);
         if($result){
@@ -18,5 +19,9 @@
         else {
             echo "Database connection failed!";
         }
+    }
+    }
+    else {
+        http_response_code(405); // Methode nicht erlaubt
     }
 ?>
