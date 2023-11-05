@@ -17,7 +17,7 @@
             if(isset($response)) {
                 echo json_encode($response, JSON_UNESCAPED_UNICODE);}
             else {
-                echo "No data found!";
+                http_response_code(405);
             }
         }
         else {
