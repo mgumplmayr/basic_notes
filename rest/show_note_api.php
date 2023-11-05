@@ -17,7 +17,7 @@
             if(isset($response)) {
                 echo json_encode($response, JSON_UNESCAPED_UNICODE);}
             else {
-                http_response_code(405);
+                http_response_code(404);
             }
         }
         else {
